@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Image ,Dimensions,StyleSheet, Platform} from 'react-native'
+import {View, Image ,Dimensions,StyleSheet, Platform, StatusBar} from 'react-native'
 
 export default class NavBar extends React.Component{
   render(){
@@ -26,10 +26,11 @@ export default class NavBar extends React.Component{
 }
 
 var { heiht, width } = Dimensions.get('window');
+var statusBarHeight = StatusBar.currentHeight;
 const styles = StyleSheet.create({
   navbar: {
     height: Platform.OS === 'ios' ? 56 : 44,
-    //marginTop: Platform.OS === 'ios' ? 33 :statusBarHeight,
+    marginTop: Platform.OS === 'android' ? statusBarHeight : 0,
     width : width,
     flexDirection: 'row',
     alignItems:'center',

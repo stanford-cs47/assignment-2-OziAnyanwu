@@ -49,6 +49,7 @@ var { heiht, width } = Dimensions.get('window');
 const styles = StyleSheet.create({
   bottomBar:{
     width: width,
+    height: 70,
     flexDirection : 'row',
     justifyContent: 'space-around',
     alignItems:'center'

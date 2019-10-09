@@ -19,13 +19,23 @@ export default class App extends React.Component {
   }
 
   render() {
-    return (
-      <SafeAreaView style={styles.container}>
-        <NavBar/>
-        <ProfileView/>
-        <BottomBar/>
-      </SafeAreaView>
-    );
+    if (Platform.OS === 'ios'){
+      return (
+        <SafeAreaView style={styles.container}>
+          <NavBar/>
+          <ProfileView/>
+          <BottomBar/>
+        </SafeAreaView>
+      );
+    } else {
+      return (
+        <View style={styles.container}>
+          <NavBar/>
+          <ProfileView/>
+          <BottomBar/>
+        </View>
+      );
+    }
   }
 }
 
